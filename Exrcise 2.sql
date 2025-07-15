@@ -79,7 +79,7 @@ ORDER BY
 -- SECTION 3
 
 --nomor 9
-select count (ProductLine) from Production.Product
+select count (ProductLine) as Jumlah from Production.Product.
 
 -- nomor 10
 SELECT
