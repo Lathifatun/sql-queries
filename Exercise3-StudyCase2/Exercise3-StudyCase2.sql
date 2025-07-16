@@ -8,9 +8,9 @@ CREATE TABLE Employee (
 
 -- 2. Tabel Instructor (mengacu ke Employee)
 CREATE TABLE Instructor (
-    InstructorID INT PRIMARY KEY,  
-    Expertise VARCHAR(100),
-    FOREIGN KEY (InstructorID) REFERENCES Employee(EmployeeID)
+    InstructorID INT PRIMARY KEY IDENTITY(1,1),
+    EmployeeID INT NOT NULL UNIQUE,
+    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
 );
 
 -- 3. Tabel TrainingCourse
