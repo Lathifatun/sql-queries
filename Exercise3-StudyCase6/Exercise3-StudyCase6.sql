@@ -22,7 +22,7 @@ CREATE TABLE PromotionCampaign (
     Region VARCHAR(50) NOT NULL
 );
  
--- 4. CampaignModel (Junction table: menghubungkan Campaign dan CarModel)
+-- 4. CampaignModel
 CREATE TABLE CampaignModel (
     CampaignModelID INT PRIMARY KEY IDENTITY(1,1),
     CampaignID INT NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE CampaignModel (
     FOREIGN KEY (CarModelID) REFERENCES CarModel(CarModelID)
 );
  
--- 5. CampaignDealer (Junction table: menghubungkan Campaign dan Dealer)
+-- 5. CampaignDealer 
 CREATE TABLE CampaignDealer (
     CampaignDealerID INT PRIMARY KEY IDENTITY(1,1),
     CampaignID INT NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE CampaignDealer (
     FOREIGN KEY (DealerID) REFERENCES Dealer(DealerID)
 );
  
--- 6. CustomerBenefit (mencatat pelanggan yang mendapat manfaat dari kampanye)
+-- 6. CustomerBenefit 
 CREATE TABLE CustomerBenefit (
     BenefitID INT PRIMARY KEY IDENTITY(1,1),
     CustomerName VARCHAR(100) NOT NULL,
