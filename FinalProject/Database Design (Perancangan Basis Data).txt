@@ -1,0 +1,16 @@
+Database Design (Perancangan Basis Data)
+Database ini dirancang untuk mengelola proses penjualan mobil di dealer AutoCar, mulai dari konsultasi awal hingga serah terima mobil. Desain ini mencakup tabel-tabel utama yang saling terhubung untuk mencatat informasi pelanggan, kendaraan, transaksi, leasing, dan dokumen terkait.
+
+Struktur Tabel Utama:
+1. Customer > Menyimpan data pelanggan: nama, kontak, dan alamat.
+2. Car > Menyimpan daftar model mobil (merk, tipe, harga dasar).
+3. Dealer > Menyimpan informasi dealer seperti nama, alamat, dan pajak yang berlaku.
+4. DealerCar (Junction Table) > Menghubungkan mobil dengan dealer, termasuk harga jual dealer dan stok mobil.
+5. SalesPerson > Mencatat data tenaga penjual yang menangani transaksi.
+6. ConsultHistory > Riwayat konsultasi awal antara pelanggan dan sales, termasuk kebutuhan dan preferensi mobil.
+7. TestDriveNego > Mencatat sesi test drive dan hasil negosiasi diskon atau bonus.
+8. LOI (Letter of Intent) > Bukti minat beli pelanggan disertai pembayaran booking fee.
+9. Agreement > Perjanjian pembelian mobil antara dealer dan pelanggan. Satu agreement hanya terkait satu LOI, tapi bisa melibatkan beberapa mobil.
+10. AgreementDealerCar (Junction Table) > Menyimpan detail mobil yang dibeli per agreement, termasuk jumlah dan harga akhir per unit.
+11. Credit > Informasi pengajuan kredit kendaraan: leasing, survei, dan status persetujuan. Terhubung satu-satu dengan Agreement.
+12. PaymentDetail > Catatan pembayaran oleh pelanggan, termasuk jenis (DP, lunas, admin, dll).
